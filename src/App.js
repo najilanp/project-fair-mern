@@ -6,6 +6,8 @@ import Register from './Pages/Register'
 import Dashboard from './Pages/Dashboard'
 import Projects from './Pages/Projects'
 import Footer from './Components/Footer';
+import Auth from './Components/Auth';
+
 
 
 
@@ -14,8 +16,8 @@ function App() {
     <>
     <Routes>
       <Route path='/'element={<PFHome/>} />
-      <Route path='/login'element={<Login/>} />
-      <Route path='/register'element={<Register/>} />
+      <Route path='/login'element={<Auth/>} />
+      <Route path='/register'element={<Auth register/>} />
       <Route path='/dashboard'element={<Dashboard/>} />
       <Route path='/projects'element={<Projects/>} />
     </Routes>

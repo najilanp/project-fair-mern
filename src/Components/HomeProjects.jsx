@@ -6,12 +6,16 @@ import { Link } from 'react-router-dom'
 function HomeProjects() {
   return (
     <>
-    <Row>
-        <h1 className='text-center mb-5'>Explore Our Projects</h1>
-        <Col  sm={12} md={6} lg={4} >
-            <ProjectCard/>
-        </Col>
-    </Row>
+    <h1 className='text-center mb-5'>Explore Our Projects</h1>
+   <marquee scrollAmount={20}>
+      <Row>
+          <Col  sm={12} md={6} lg={4} >
+              <ProjectCard/>
+          </Col>
+         
+         
+      </Row>
+   </marquee>
 <div className='text-center mt-5'><Link to={'/projects'}>View More Projects</Link></div>  
   </>
   )
