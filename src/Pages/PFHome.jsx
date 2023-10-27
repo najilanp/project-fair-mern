@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import Img1 from '../Assets/landingpageimg.webp'
 import HomeProjects from '../Components/HomeProjects'
+import { Link } from 'react-router-dom'
 
 function PFHome() {
+  const[isLoggedIn,setLoggedIn]=useState(false)
+
   return (
     <>
     {/* landing section */}
@@ -12,7 +15,12 @@ function PFHome() {
         <Col sm={12} md={6}>
           <h1 style={{fontSize:'80px'}} className='text-light'><i className='fa-brands fa-stack-overflow fa-bounce'></i>Project Fair</h1>
           <p>One step destination for all software development projects....</p>
-          <button className='btn btn-warning'>START TO EXPLORE <i className='fa-solid fa-right-long fa-beat ms-2'></i></button>
+          {
+          isLoggedIn?
+          <Link to={'/dashboard'} className='btn btn-warning'>Manage your project <i className='fa-solid fa-right-long fa-beat ms-2'></i></Link>
+          :
+          <Link to={'/login'} className='btn btn-warning'>START TO EXPLORE <i className='fa-solid fa-right-long fa-beat ms-2'></i></Link>
+          }
         </Col>
         <Col sm={12} md={6}>
           <img style={{marginTop:'100px'}} className='img-fluid w-75' src={Img1} alt=" project fair" />
