@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../Components/Header'
 import { Row ,Col} from 'react-bootstrap'
 import ProjectCard from '../Components/ProjectCard'
 
 
 function Projects() {
+  useEffect(()=>{
+    const role = localStorage.getItem("Role")
+    if(role!=="user"){
+      alert("permision denied")
+    }
+  },[])
   return (
     <>
     {/* navbar */}

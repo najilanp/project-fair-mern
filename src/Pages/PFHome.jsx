@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import Img1 from '../Assets/landingpageimg.webp'
 import HomeProjects from '../Components/HomeProjects'
@@ -6,6 +6,14 @@ import { Link } from 'react-router-dom'
 
 function PFHome() {
   const[isLoggedIn,setLoggedIn]=useState(false)
+
+  useEffect(()=>{
+    if(sessionStorage.getItem("token")){
+      setLoggedIn(true)
+    }else{
+      setLoggedIn(false)
+    }
+  },[])
 
   return (
     <>
